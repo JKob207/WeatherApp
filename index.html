@@ -7,6 +7,7 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="wheather-widget.css" />
 </head>
 <body>
     <header>
@@ -24,8 +25,88 @@
         </div>
     </header>
     <section id="wheather-widget">
-        <div id="search-bar"></div>
-        <div id="widget"></div>
+        <div id="search-bar">
+            <input type="text" placeholder="Enter a city name" />
+        </div>
+        <div id="widget">
+            <div class="main-widget-info">
+                <div class="wheather-widget-image">
+                    <img src="https://via.placeholder.com/128" alt="placeholder photo" />
+                    <span class="wheather-widget-image-desc">placeholder</span>
+                </div>
+                <div class="wheather-widget-stats">
+                    <div class="wheather-widget-stats-desc">Wind: 0 mph</div>
+                    <div class="wheather-widget-stats-desc">Percip: 0.0 in</div>
+                    <div class="wheather-widget-stats-desc">Pressure: 29.9 in</div>
+                    <div class="wheather-widget-stats-desc temp">20 <span class="temp-format">°C</span></div>
+                </div>
+            </div>
+            <div class="wheather-widget-next-days">
+                <div class="wheather-widget-day">
+                    <div class="wheather-widget-day-short">Mon</div>
+                    <div class="wheather-widget-day-img">
+                        <img src="https://via.placeholder.com/64" alt="whather" />
+                    </div>
+                    <div class="wheather-widget-day-img">
+                        18 <span class="temp-format">°C</span> 
+                    </div>
+                </div>
+                <div class="wheather-widget-day">
+                    <div class="wheather-widget-day-short">Tue</div>
+                    <div class="wheather-widget-day-img">
+                        <img src="https://via.placeholder.com/64" alt="whather" />
+                    </div>
+                    <div class="wheather-widget-day-img">
+                        18 <span class="temp-format">°C</span> 
+                    </div>
+                </div>
+                <div class="wheather-widget-day">
+                    <div class="wheather-widget-day-short">Wed</div>
+                    <div class="wheather-widget-day-img">
+                        <img src="https://via.placeholder.com/64" alt="whather" />
+                    </div>
+                    <div class="wheather-widget-day-img">
+                        18 <span class="temp-format">°C</span> 
+                    </div>
+                </div>
+                <div class="wheather-widget-day">
+                    <div class="wheather-widget-day-short">Thu</div>
+                    <div class="wheather-widget-day-img">
+                        <img src="https://via.placeholder.com/64" alt="whather" />
+                    </div>
+                    <div class="wheather-widget-day-img">
+                        18 <span class="temp-format">°C</span> 
+                    </div>
+                </div>
+                <div class="wheather-widget-day">
+                    <div class="wheather-widget-day-short">Fri</div>
+                    <div class="wheather-widget-day-img">
+                        <img src="https://via.placeholder.com/64" alt="whather" />
+                    </div>
+                    <div class="wheather-widget-day-img">
+                        18 <span class="temp-format">°C</span> 
+                    </div>
+                </div>
+                <div class="wheather-widget-day">
+                    <div class="wheather-widget-day-short">Sat</div>
+                    <div class="wheather-widget-day-img">
+                        <img src="https://via.placeholder.com/64" alt="whather" />
+                    </div>
+                    <div class="wheather-widget-day-img">
+                        18 <span class="temp-format">°C</span> 
+                    </div>
+                </div>
+                <div class="wheather-widget-day">
+                    <div class="wheather-widget-day-short">Sun</div>
+                    <div class="wheather-widget-day-img">
+                        <img src="https://via.placeholder.com/64" alt="whather" />
+                    </div>
+                    <div class="wheather-widget-day-img">
+                        18 <span class="temp-format">°C</span> 
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script src="WeatherApp.js"></script>
