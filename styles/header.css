@@ -32,3 +32,8 @@ header
 {
     background-color: #04ff04;
 }
+
+.flag img
+{
+    height: 20px;
+}
