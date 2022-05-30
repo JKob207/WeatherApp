@@ -9,6 +9,9 @@
     width: 80%;
     margin: 3% auto;
     padding: 25px;
+    background-image: url("../img/clear.gif");
+    background-size: cover;
+    background-position: bottom;
 }
 
 #search-bar
@@ -47,6 +50,9 @@
 .wheather-widget-image-desc
 {
     margin: 25px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .main-widget-info
@@ -64,6 +70,11 @@
     font-size: 19px;
 }
 
+.wheather-widget-stats-desc
+{
+    color: #fff;
+}
+
 .temp
 {
     font-size: 24px;
@@ -78,6 +89,8 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 5% 0;
+    color: #fff;
+    font-size: 18px;
 }
 
 .wheather-widget-day
