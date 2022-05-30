@@ -1,4 +1,4 @@
-#wheather-widget
+#weather-widget
 {
     width: 80%;
     margin: auto;
@@ -39,7 +39,7 @@
     border-right-width: 0;
 }
 
-.wheather-widget-image
+.weather-widget-image
 {
     width: 50%;
     display: flex;
@@ -47,7 +47,7 @@
     justify-content: center;
 }
 
-.wheather-widget-image-desc
+.weather-widget-image-desc
 {
     margin: 25px;
     color: #fff;
@@ -63,14 +63,14 @@
     justify-content: center;
 }
 
-.wheather-widget-stats
+.weather-widget-stats
 {
     width: 50%;
     text-align: center;
     font-size: 19px;
 }
 
-.wheather-widget-stats-desc
+.weather-widget-stats-desc
 {
     color: #fff;
 }
@@ -82,7 +82,7 @@
     margin-top: 12px;
 }
 
-.wheather-widget-next-days
+.weather-widget-next-days
 {
     width: 100%;
     display: flex;
@@ -93,7 +93,7 @@
     font-size: 18px;
 }
 
-.wheather-widget-day
+.weather-widget-day
 {
     display: flex;
     flex-direction: column;

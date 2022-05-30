@@ -11,7 +11,7 @@ class WeatherApp {
         console.log("App initalized!");
         this.isCelcius = true;
 
-        this.searchWheatherByCity("Cracow");
+        this.searchWeatherByCity("Cracow");
         this.searchBarCheck();
         this.setChangeTemp();
     }
@@ -32,10 +32,10 @@ class WeatherApp {
         flag.src = `https://countryflagsapi.com/svg/${countryFlag}`;
     }
 
-    async setCurrentWheather(current)
+    async setCurrentWeather(current)
     {
-        const image = document.querySelector(".wheather-widget-image img");
-        const currentDesc = document.querySelector(".wheather-widget-image-desc");
+        const image = document.querySelector(".weather-widget-image img");
+        const currentDesc = document.querySelector(".weather-widget-image-desc");
         const wind = document.querySelector(".wind");
         const percip = document.querySelector(".percip");
         const pressure = document.querySelector(".pressure");
@@ -60,24 +60,24 @@ class WeatherApp {
 
     async setForecast(forecast)
     {
-        const days = document.querySelectorAll(".wheather-widget-day");
+        const days = document.querySelectorAll(".weather-widget-day");
         for(let i=0;i<days.length;i++)
         {
-            const wheatherWidgetDayShort = days[i].querySelector(".wheather-widget-day-short");
-            const wheatherWidgetDayImg = days[i].querySelector(".wheather-widget-day-img img");
-            const wheatherWidgetDayTemp = days[i].querySelector(".wheather-widget-day-temp");
+            const weatherWidgetDayShort = days[i].querySelector(".weather-widget-day-short");
+            const weatherWidgetDayImg = days[i].querySelector(".weather-widget-day-img img");
+            const weatherWidgetDayTemp = days[i].querySelector(".weather-widget-day-temp");
 
             let date = new Date(forecast.forecastday[i+1].date);
-            wheatherWidgetDayShort.innerText = date.toLocaleString("en-GB", { weekday: "short" });
+            weatherWidgetDayShort.innerText = date.toLocaleString("en-GB", { weekday: "short" });
 
-            wheatherWidgetDayImg.src = forecast.forecastday[i+1].day.condition.icon;
+            weatherWidgetDayImg.src = forecast.forecastday[i+1].day.condition.icon;
 
             if(this.isCelcius)
             {
-                wheatherWidgetDayTemp.innerText = `${forecast.forecastday[i+1].day.avgtemp_c} °C`;
+                weatherWidgetDayTemp.innerText = `${forecast.forecastday[i+1].day.avgtemp_c} °C`;
             }else
             {
-                wheatherWidgetDayTemp.innerText = `${forecast.forecastday[i+1].day.avgtemp_f} °F`;
+                weatherWidgetDayTemp.innerText = `${forecast.forecastday[i+1].day.avgtemp_f} °F`;
             }
 
         }
@@ -87,7 +87,7 @@ class WeatherApp {
     {
         const searchCity = () =>
         {
-            this.searchWheatherByCity(searchBarInput.value)
+            this.searchWeatherByCity(searchBarInput.value)
             .then(() => {
                 searchBarInput.value = "";
             })
@@ -104,7 +104,7 @@ class WeatherApp {
         })
     }
 
-    async searchWheatherByCity(city)
+    async searchWeatherByCity(city)
     {
         getDataByCity(city)
         .then(data => {
@@ -112,7 +112,7 @@ class WeatherApp {
             if(data.location)
             {
                 this.setHeader(data.location);
-                this.setCurrentWheather(data.current);
+                this.setCurrentWeather(data.current);
                 this.setForecast(data.forecast);
             }
         })
@@ -132,7 +132,7 @@ class WeatherApp {
                 farenheit.classList.remove("active");
                 celcius.classList.add("active");
                 this.isCelcius = true;
-                this.searchWheatherByCity(currentCity);
+                this.searchWeatherByCity(currentCity);
             }
         })
 
@@ -144,7 +144,7 @@ class WeatherApp {
                 celcius.classList.remove("active");
                 farenheit.classList.add("active");
                 this.isCelcius = false;
-                this.searchWheatherByCity(currentCity);
+                this.searchWeatherByCity(currentCity);
             }
         })
     }
