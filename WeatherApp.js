@@ -1,4 +1,4 @@
-import { getDataByCity } from "./WheatherAPI.js";
+import { getDataByCity } from "./WeatherAPI.js";
 
 class WeatherApp {
     constructor()
