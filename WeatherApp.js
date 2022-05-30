@@ -13,6 +13,7 @@ class WeatherApp {
 
         this.searchWheatherByCity("Cracow");
         this.searchBarCheck();
+        this.setChangeTemp();
     }
 
     async setHeader(location)
@@ -111,6 +112,33 @@ class WeatherApp {
                 this.setHeader(data.location);
                 this.setCurrentWheather(data.current);
                 this.setForecast(data.forecast);
+            }
+        })
+    }
+
+    async setChangeTemp()
+    {
+        const celcius = document.querySelector(".degrees-control .celcius");
+        const farenheit = document.querySelector(".degrees-control .farenheit");
+        const currentCity = document.querySelector(".location-desc").innerText.toLowerCase();
+
+        celcius.addEventListener("click", () => {
+            if(farenheit.classList.contains("active"))
+            {
+                farenheit.classList.remove("active");
+                celcius.classList.add("active");
+                this.isCelcius = true;
+                this.searchWheatherByCity(currentCity);
+            }
+        })
+
+        farenheit.addEventListener("click", () => {
+            if(celcius.classList.contains("active"))
+            {
+                celcius.classList.remove("active");
+                farenheit.classList.add("active");
+                this.isCelcius = false;
+                this.searchWheatherByCity(currentCity);
             }
         })
     }
