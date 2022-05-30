@@ -11,14 +11,8 @@ class WeatherApp {
         console.log("App initalized!");
         this.isCelcius = true;
 
-        getDataByCity("New York")
-        .then(data => {
-            //wydzielić pod koniec do osobnej funkcji!
-            console.log(data);
-            this.setHeader(data.location);
-            this.setCurrentWheather(data.current);
-            this.setForecast(data.forecast);
-        })
+        this.searchWheatherByCity("Cracow");
+        this.searchBarCheck();
     }
 
     async setHeader(location)
@@ -49,8 +43,8 @@ class WeatherApp {
         image.src = current.condition.icon;
         currentDesc.innerText = current.condition.text;
         wind.innerText = `Wind: ${current.wind_mph} km/h`;
-        percip.innerText = `Percip: ${current.precip_mm} mm`
-        pressure.innerText = `Pressure: ${current.pressure_mb} hPa`
+        percip.innerText = `Percip: ${current.precip_mm} mm`;
+        pressure.innerText = `Pressure: ${current.pressure_mb} hPa`;
 
         if(this.isCelcius)
         {
@@ -84,6 +78,41 @@ class WeatherApp {
             }
 
         }
+    }
+
+    async searchBarCheck()
+    {
+        const searchCity = () =>
+        {
+            this.searchWheatherByCity(searchBarInput.value)
+            .then(() => {
+                searchBarInput.value = "";
+            })
+        }
+
+        const searchBarInput = document.querySelector("#search-bar input");
+        const searchBarSvg = document.querySelector("#search-bar svg");
+        searchBarSvg.addEventListener("click", searchCity);
+        searchBarInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                searchCity();
+            }
+        })
+    }
+
+    async searchWheatherByCity(city)
+    {
+        getDataByCity(city)
+        .then(data => {
+            console.log(data);
+            if(data.location)
+            {
+                this.setHeader(data.location);
+                this.setCurrentWheather(data.current);
+                this.setForecast(data.forecast);
+            }
+        })
     }
 }
 
